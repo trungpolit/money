@@ -1,0 +1,25 @@
+.button-active {
+    background-color: #1284ff;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.text-right {
+    text-align: right;
+    padding-right: 6px;
+}
+
+.text-input {
+    text-align: right;
+    padding-right: 6px;
+}
+
+.list__item--nopadding {
+    padding: 0px;
+}

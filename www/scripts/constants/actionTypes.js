@@ -1,0 +1,4 @@
+export const CHANGE_TAX_PCT = 'CHANGE_TAX_PCT';
+export const CHANGE_WEIGHT = 'CHANGE_WEIGHT';
+export const CHANGE_COST = 'CHANGE_COST';
+export const RESET_RECEIPT = 'RESET_RECEIPT';
