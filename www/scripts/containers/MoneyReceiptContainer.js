@@ -1,5 +1,5 @@
 const mapStateToProps = (state) => {
-    return {taxPct: state.taxPct, rows: state.rows};
+    return {taxPct: state.moneyReceiptReducer.taxPct, rows: state.moneyReceiptReducer.rows, totalPriceNoVat: state.moneyReceiptReducer.totalPriceNoVat, totalTax: state.moneyReceiptReducer.totalTax, totalPrice: state.moneyReceiptReducer.totalPrice};
 };
 
 import {changeWeight, changeCost, changeTaxPct, resetReceipt} from '../actions/actionCreators';
@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 import {connect} from 'react-redux';
-import {MoneyReceipt} from '../components/MoneyReceipt';
+import MoneyReceipt from '../components/MoneyReceipt';
 const MoneyReceiptContainer = connect(mapStateToProps, mapDispatchToProps)(MoneyReceipt);
 
 export default MoneyReceiptContainer;

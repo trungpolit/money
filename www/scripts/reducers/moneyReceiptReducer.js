@@ -29,6 +29,7 @@ const initialState = {
     totalPrice: 0
 };
 const calculate = function (state) {
+    console.log(state);
     // Nếu chưa có thông tin taxPct
     if (!state.taxPct) {
         return state;
@@ -37,11 +38,11 @@ const calculate = function (state) {
     let totalTax = 0;
     let totalPrice = 0;
     for (let index = 0; index < state.rows.length; index++) {
-        let element = array[index];
+        let element = state.rows[index];
         if (!element.weight || !element.cost) {
             continue;
         }
-        element.totalTax = parseInt(element.cost) * parseInt(state.taxPct);
+        element.totalTax = parseInt(element.cost) * parseFloat(state.taxPct / 100);
         totalTax += element.totalTax;
 
         element.totalPrice = parseInt(element.cost) * parseInt(element.weight);
@@ -53,26 +54,30 @@ const calculate = function (state) {
 
         state.rows[index] = element;
     }
+    state.totalPriceNoVat = totalPriceNoVat;
+    state.totalTax = totalTax;
+    state.totalPrice = totalPrice;
     return state;
 };
 import {CHANGE_TAX_PCT, CHANGE_COST, CHANGE_WEIGHT, RESET_RECEIPT} from '../constants/actionTypes';
 const moneyReceiptReducer = (state = initialState, action) => {
+    let newState;
+    let rowsTmp;
     switch (action.type) {
         case CHANGE_TAX_PCT:
-            let newState = Object.assign({}, state, {taxPct: action.pct});
-            newState = calculate(newState);
+            newState = calculate(Object.assign({}, state, {
+                taxPct: parseInt(action.pct)
+            }));
             return newState;
         case CHANGE_WEIGHT:
-            let rowsTmp = JSON.parse(JSON.stringify(state.rows));
-            rowsTmp[action.index]['weight'] = action.weight;
-            let newState = Object.assign({}, state, {rows: rowsTmp});
-            newState = calculate(newState);
+            rowsTmp = JSON.parse(JSON.stringify(state.rows));
+            rowsTmp[action.index]['weight'] = parseInt(action.weight);
+            newState = calculate(Object.assign({}, state, {rows: rowsTmp}));
             return newState;
         case CHANGE_COST:
-            let rowsTmp = JSON.parse(JSON.stringify(state.rows));
-            rowsTmp[action.index]['cost'] = action.cost;
-            let newState = Object.assign({}, state, {rows: rowsTmp});
-            newState = calculate(newState);
+            rowsTmp = JSON.parse(JSON.stringify(state.rows));
+            rowsTmp[action.index]['cost'] = parseInt(action.cost);
+            newState = calculate(Object.assign({}, state, {rows: rowsTmp}));
             return newState;
         case RESET_RECEIPT:
             return Object.assign({}, initialState);

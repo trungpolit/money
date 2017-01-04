@@ -36,12 +36,10 @@ class MoneyReceiptHeader extends React.Component {
                             margin: '0 auto',
                             width: '90%'
                         }}
-                            className={(this.props.left.value === this.state.vat)
+                            className={(this.props.left.value === this.props.taxPct)
                             ? 'button-active'
                             : ''}
-                            onClick={this
-                            .handleClick
-                            .bind(this, this.props.left.value)}>{this.props.left.label}</Button>
+                            onClick={() => this.props.onTaxPctChange(this.props.left.value)}>{this.props.left.label}</Button>
                     </Col>
                     <Col
                         style={{
@@ -53,7 +51,7 @@ class MoneyReceiptHeader extends React.Component {
                             margin: '0 auto',
                             width: '90%'
                         }}
-                            className={(this.props.right.value === this.state.vat)
+                            className={(this.props.right.value === this.props.taxPct)
                             ? 'button-active'
                             : ''}
                             onClick={() => this.props.onTaxPctChange(this.props.right.value)}>{this.props.right.label}</Button>

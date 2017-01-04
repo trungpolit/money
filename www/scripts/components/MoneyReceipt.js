@@ -53,6 +53,7 @@ class MoneyReceipt extends React.Component {
                 <MoneyReceiptHeader
                     left={left}
                     right={right}
+                    taxPct={this.props.taxPct}
                     onTaxPctChange={this.props.onTaxPctChange}/>
                 <List>
                     <ListItem>
@@ -68,19 +69,27 @@ class MoneyReceipt extends React.Component {
                     {this
                         .props
                         .rows
-                        .map(function (row, i) {
+                        .map((row, i) => {
                             return <MoneyReceiptItem
                                 onWeightChange={this.props.onWeightChange}
                                 onCostChange={this.props.onCostChange}
+                                key={i}
                                 index={i}
                                 weight={row.weight}
-                                cost={row.cost}/>;
+                                cost={row.cost}
+                                totalPrice={row.totalPrice}
+                                costNoVat={row.costNoVat}
+                                totalPriceNoVat={row.totalPriceNoVat}/>;
                         })}
                 </List>
+                <MoneyReceiptFooter
+                    totalPriceNoVat={this.props.totalPriceNoVat}
+                    totalTax={this.props.totalTax}
+                    totalPrice={this.props.totalPrice}/>
                 <section style={{
                     'margin': '16px'
                 }}>
-                    <Button modifier='large'>Làm lại</Button>
+                    <Button modifier='large' onClick={() => this.props.onResetReceiptClick()}>Làm lại</Button>
                 </section>
             </Page>
         );

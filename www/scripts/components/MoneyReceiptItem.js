@@ -28,7 +28,7 @@ class MoneyReceiptItem extends React.Component {
                     }}>
                         <Input
                             type='number'
-                            value={this.props.weight}
+                            value={this.props.weight.toString()}
                             onChange={(e) => this.props.onWeightChange(e.target.value, this.props.index)}
                             modifier='underbar'
                             float/>
@@ -36,7 +36,7 @@ class MoneyReceiptItem extends React.Component {
                     <Col >
                         <Input
                             type='number'
-                            value={this.props.cost}
+                            value={this.props.cost.toString()}
                             onChange={(e) => this.props.onCostChange(e.target.value, this.props.index)}
                             modifier='underbar'
                             float/>
@@ -48,12 +48,12 @@ class MoneyReceiptItem extends React.Component {
                         borderRight: '1px solid'
                     }}>
                         <div className='text-right'>
-                            <span >{this.props.weight * this.props.cost}</span>
+                            <span >{this.props.totalPriceNoVat}</span>
                         </div>
                     </Col>
                     <Col >
                         <div className='text-right'>
-                            <span >{this.props.cost}</span>
+                            <span >{this.props.costNoVat}</span>
                         </div>
                     </Col>
                 </Row>

@@ -6,13 +6,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ons from 'onsenui';
 import {Page, Toolbar, Button} from 'react-onsenui';
+import {Provider} from 'react-redux';
 
 import MoneyNavigator from './components/MoneyNavigator';
 import MoneyListPage from './components/MoneyListPage';
 
 import {createStore} from 'redux';
+import devToolsEnhancer from 'remote-redux-devtools';
 import indexReducer from './reducers/indexReducer';
-let store = createStore(indexReducer);
+let store = createStore(indexReducer, devToolsEnhancer());
 
 (function () {
     "use strict";
@@ -25,7 +27,9 @@ let store = createStore(indexReducer);
         document.addEventListener('resume', onResume.bind(this), false);
 
         ReactDOM.render(
-            <MoneyNavigator/>, document.getElementById('app'));
+            <Provider store={store}>
+            <MoneyNavigator/>
+        </Provider>, document.getElementById('app'));
     };
 
     function onPause() {

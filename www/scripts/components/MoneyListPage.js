@@ -56,7 +56,7 @@ class MoneyListPage extends React.Component {
                         comp: MoneyReceiptContainer,
                         label: "Tính hóa đơn",
                         props: {
-                            key: "MoneyReceipt",
+                            key: "MoneyReceiptContainer",
                             label: "Tính Hóa Đơn"
                         }
                     }, {
