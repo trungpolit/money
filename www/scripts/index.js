@@ -14,7 +14,7 @@ import MoneyListPage from './components/MoneyListPage';
 import {createStore} from 'redux';
 import devToolsEnhancer from 'remote-redux-devtools';
 import indexReducer from './reducers/indexReducer';
-let store = createStore(indexReducer, devToolsEnhancer());
+let store = createStore(indexReducer, devToolsEnhancer({realtime: true}));
 
 (function () {
     "use strict";
