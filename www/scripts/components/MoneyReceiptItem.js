@@ -24,19 +24,28 @@ class MoneyReceiptItem extends React.Component {
                 <Row>
                     <Col
                         style={{
-                        borderRight: '1px solid'
+                        borderRight: '1px solid',
+                        width: '30%'
                     }}>
                         <Input
                             type='number'
-                            value={this.props.weight.toString()}
+                            value={this
+                            .props
+                            .weight
+                            .toString()}
                             onChange={(e) => this.props.onWeightChange(e.target.value, this.props.index)}
                             modifier='underbar'
                             float/>
                     </Col>
-                    <Col >
+                    <Col style={{
+                        width: '70%'
+                    }}>
                         <Input
                             type='number'
-                            value={this.props.cost.toString()}
+                            value={this
+                            .props
+                            .cost
+                            .toString()}
                             onChange={(e) => this.props.onCostChange(e.target.value, this.props.index)}
                             modifier='underbar'
                             float/>

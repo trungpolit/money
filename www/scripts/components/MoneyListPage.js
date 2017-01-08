@@ -6,7 +6,7 @@ import ons from 'onsenui';
 import {Page, Toolbar, List, ListHeader, ListItem} from 'react-onsenui';
 
 import MoneyReceiptContainer from '../containers/MoneyReceiptContainer';
-import MoneyCounter from './MoneyCounter';
+import MoneyCounterContainer from '../containers/MoneyCounterContainer';
 
 class MoneyListPage extends React.Component {
     constructor(props) {
@@ -60,10 +60,10 @@ class MoneyListPage extends React.Component {
                             label: "Tính Hóa Đơn"
                         }
                     }, {
-                        comp: MoneyCounter,
+                        comp: MoneyCounterContainer,
                         label: "Tính tiền hàng",
                         props: {
-                            key: "MoneyCounter",
+                            key: "MoneyCounterContainer",
                             label: "Tính Tiền Hàng"
                         }
                     }

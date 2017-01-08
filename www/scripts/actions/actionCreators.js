@@ -1,4 +1,11 @@
-import {CHANGE_TAX_PCT, CHANGE_COST, CHANGE_WEIGHT, RESET_RECEIPT} from '../constants/actionTypes';
+import {
+    CHANGE_TAX_PCT,
+    CHANGE_COST,
+    CHANGE_WEIGHT,
+    RESET_RECEIPT,
+    CHANGE_COUNT,
+    RESET_COUNT
+} from '../constants/actionTypes';
 
 export function changeTaxPct(pct) {
     return {type: CHANGE_TAX_PCT, pct: pct};
@@ -14,4 +21,12 @@ export function changeWeight(weight, index) {
 
 export function resetReceipt() {
     return {type: RESET_RECEIPT};
+}
+
+export function changeCount(count, index) {
+    return {type: CHANGE_COUNT, count: count, index: index};
+}
+
+export function resetCount() {
+    return {type: RESET_COUNT};
 }

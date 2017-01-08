@@ -1,50 +1,32 @@
-const initialState = {
-    rows: {
-        500: {
-            count: null,
-            totalPrice: null
-        },
-        200: {
-            count: null,
-            totalPrice: null
-        },
-        100: {
-            count: null,
-            totalPrice: null
-        },
-        50: {
-            count: null,
-            totalPrice: null
-        },
-        20: {
-            count: null,
-            totalPrice: null
-        },
-        10: {
-            count: null,
-            totalPrice: null
-        },
-        5: {
-            count: null,
-            totalPrice: null
-        },
-        2: {
-            count: null,
-            totalPrice: null
-        },
-        1: {
-            count: null,
-            totalPrice: null
+import {RATIO, INITIAL_STATE} from '../constants/counters';
+const initialState = INITIAL_STATE;
+const calculate = function (state) {
+    let totalPrice = 0;
+    for (let prop in state.rows) {
+        let element = state.rows[prop];
+        if (!element.count || !element.totalPrice) {
+            continue;
         }
+        totalPrice += element.totalPrice;
+        state.rows[prop] = element;
     }
+    state.totalPrice = totalPrice;
+    return state;
 };
 const moneyCounterReducer = (state = initialState, action) => {
+    let newState;
+    let rowsTmp;
+    let label;
+    let index;
     switch (action.type) {
         case 'CHANGE_COUNT':
-            let rowsTmp = JSON.parse(JSON.stringify(state.rows[action.index]));
-            rowsTmp.count = action.count;
-            rowsTmp.totalPrice = parseInt(action.count) * parseInt(action.index);
-            return Object.assign({}, state, {rows: rowsTmp});
+            index = action.index;
+            rowsTmp = JSON.parse(JSON.stringify(state.rows));
+            rowsTmp[index].count = parseInt(action.count);
+            label = initialState.rows[index].label;
+            rowsTmp[index].totalPrice = parseInt(action.count) * parseInt(label) * parseInt(RATIO);
+            newState = calculate(Object.assign({}, state, {rows: rowsTmp}));
+            return newState;
         case 'RESET_COUNT':
             return Object.assign({}, initialState);
         default:

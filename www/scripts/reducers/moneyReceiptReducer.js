@@ -29,7 +29,6 @@ const initialState = {
     totalPrice: 0
 };
 const calculate = function (state) {
-    console.log(state);
     // Nếu chưa có thông tin taxPct
     if (!state.taxPct) {
         return state;
@@ -42,13 +41,13 @@ const calculate = function (state) {
         if (!element.weight || !element.cost) {
             continue;
         }
-        element.totalTax = parseInt(element.cost) * parseFloat(state.taxPct / 100);
+        element.totalTax = parseInt(element.cost) * parseInt(element.weight) * parseFloat(state.taxPct / 100);
         totalTax += element.totalTax;
 
         element.totalPrice = parseInt(element.cost) * parseInt(element.weight);
         totalPrice += element.totalPrice;
 
-        element.costNoVat = parseInt(element.cost) - element.totalTax;
+        element.costNoVat = parseInt(element.cost) - parseInt(element.cost) * parseFloat(state.taxPct / 100);
         element.totalPriceNoVat = element.costNoVat * parseInt(element.weight);
         totalPriceNoVat += element.totalPriceNoVat;
 

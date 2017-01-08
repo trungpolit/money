@@ -24,21 +24,39 @@ class MoneyReceiptFooter extends React.Component {
                 <ListItem>
                     <Row>
                         <Col>
-                            <strong>Tiền hàng</strong>
+                            <div className='text-right'>
+                                <strong>Tiền hàng</strong>
+                            </div>
                         </Col>
-                        <Col>{this.props.totalPriceNoVat}</Col>
+                        <Col>
+                            <div className='text-right'>
+                                {this.props.totalPriceNoVat}
+                            </div>
+                        </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <strong>Tiền thuế</strong>
+                            <div className='text-right'>
+                                <strong>Tiền thuế</strong>
+                            </div>
                         </Col>
-                        <Col>{this.props.totalTax}</Col>
+                        <Col>
+                            <div className='text-right'>
+                                {this.props.totalTax}
+                            </div>
+                        </Col>
                     </Row>
                     <Row>
                         <Col>
-                            <strong>Tổng tiền thuế</strong>
+                            <div className='text-right'>
+                                <strong>Tổng tiền thuế</strong>
+                            </div>
                         </Col>
-                        <Col>{this.props.totalPrice}</Col>
+                        <Col>
+                            <div className='text-right'>
+                                {this.props.totalPrice}
+                            </div>
+                        </Col>
                     </Row>
                 </ListItem>
             </section>
