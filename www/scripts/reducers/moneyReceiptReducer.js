@@ -36,26 +36,27 @@ const calculate = function (state) {
     let totalPriceNoVat = 0;
     let totalTax = 0;
     let totalPrice = 0;
+    let taxPct = parseFloat((parseInt(state.taxPct) / 100).toFixed(2));
     for (let index = 0; index < state.rows.length; index++) {
         let element = state.rows[index];
         if (!element.weight || !element.cost) {
             continue;
         }
-        element.totalTax = parseInt(element.cost) * parseInt(element.weight) * parseFloat(state.taxPct / 100);
+        element.totalTax = parseFloat((parseInt(element.cost) * parseInt(element.weight) * taxPct).toFixed(2));
         totalTax += element.totalTax;
 
         element.totalPrice = parseInt(element.cost) * parseInt(element.weight);
         totalPrice += element.totalPrice;
 
-        element.costNoVat = parseInt(element.cost) - parseInt(element.cost) * parseFloat(state.taxPct / 100);
+        element.costNoVat = parseFloat((parseInt(element.cost) - parseInt(element.cost) * taxPct).toFixed(2));
         element.totalPriceNoVat = element.costNoVat * parseInt(element.weight);
         totalPriceNoVat += element.totalPriceNoVat;
 
         state.rows[index] = element;
     }
-    state.totalPriceNoVat = totalPriceNoVat;
-    state.totalTax = totalTax;
-    state.totalPrice = totalPrice;
+    state.totalPriceNoVat = parseFloat(totalPriceNoVat.toFixed(2));
+    state.totalTax = parseFloat(totalTax.toFixed(2));
+    state.totalPrice = parseFloat(totalPrice.toFixed(2));
     return state;
 };
 import {CHANGE_TAX_PCT, CHANGE_COST, CHANGE_WEIGHT, RESET_RECEIPT} from '../constants/actionTypes';

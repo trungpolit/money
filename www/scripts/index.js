@@ -1,7 +1,7 @@
-﻿// For an introduction to the Blank template, see the following documentation:
-// http://go.microsoft.com/fwlink/?LinkID=397704 To debug code on page load in
-// Ripple or on Android devices/emulators: launch your app, set breakpoints, and
-// then run "window.location.reload()" in the JavaScript Console.
+﻿import injectTapEventPlugin from 'react-tap-event-plugin';
+// Needed for onTouchTap http://stackoverflow.com/a/34015469/988941
+injectTapEventPlugin();
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ons from 'onsenui';
@@ -14,7 +14,8 @@ import MoneyListPage from './components/MoneyListPage';
 import {createStore} from 'redux';
 import devToolsEnhancer from 'remote-redux-devtools';
 import indexReducer from './reducers/indexReducer';
-let store = createStore(indexReducer, devToolsEnhancer({realtime: true}));
+// let store = createStore(indexReducer, devToolsEnhancer({realtime: true}));
+let store = createStore(indexReducer);
 
 (function () {
     "use strict";

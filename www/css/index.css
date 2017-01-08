@@ -23,3 +23,7 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 .list__item--nopadding {
     padding: 0px;
 }
+
+input.counter {
+    min-height: 35px;
+}

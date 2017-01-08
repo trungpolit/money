@@ -12,6 +12,9 @@ import {
     Button
 } from 'react-onsenui';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import TaxSelectField from './TaxSelectField';
+
 class MoneyReceiptHeader extends React.Component {
     constructor(props) {
         super(props);
@@ -25,6 +28,13 @@ class MoneyReceiptHeader extends React.Component {
                 'marginTop': '16px',
                 'marginBottom': '16px'
             }}>
+                <Row>
+                    <Col>
+                        <MuiThemeProvider>
+                            <TaxSelectField/>
+                        </MuiThemeProvider>
+                    </Col>
+                </Row>
                 <Row>
                     <Col
                         style={{

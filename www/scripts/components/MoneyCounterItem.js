@@ -16,7 +16,6 @@ import {
 class MoneyCounterItem extends React.Component {
     constructor(props) {
         super(props);
-        console.log(props);
     }
 
     render() {
@@ -32,6 +31,7 @@ class MoneyCounterItem extends React.Component {
                             borderRight: '1px solid'
                         }}>
                             <Input
+                                className='counter'
                                 type='number'
                                 value={this
                                 .props
@@ -42,6 +42,7 @@ class MoneyCounterItem extends React.Component {
                         </Col>
                         <Col>
                             <Input
+                                className='counter'
                                 type='number'
                                 value={this
                                 .props
@@ -56,7 +57,7 @@ class MoneyCounterItem extends React.Component {
                 <Col>
                     <Input
                         type='number'
-                        className='text-right'
+                        className='text-right counter'
                         value={this
                         .props
                         .totalPrice
