@@ -13,6 +13,17 @@ import {
     ListItem
 } from 'react-onsenui';
 
+import {
+    Table,
+    TableBody,
+    TableHeader,
+    TableHeaderColumn,
+    TableRow,
+    TableRowColumn
+} from 'material-ui/Table';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 class MoneyCounterItem extends React.Component {
     constructor(props) {
         super(props);
@@ -20,41 +31,57 @@ class MoneyCounterItem extends React.Component {
 
     render() {
         return (
-            <Row>
-                <Col style={{
-                    borderRight: '1px solid'
+            <TableRow
+                style={{
+                height: '30px',
+                margin: 0,
+                padding: 0
+            }}>
+                <TableRowColumn
+                    style={{
+                    width: '25%',
+                    height: '30px',
+                    margin: 0,
+                    paddingRight: '6px',
+                    paddingLeft: '6px'
                 }}>
-                    <Row>
-                        <Col
-                            width='30%'
-                            style={{
-                            borderRight: '1px solid'
-                        }}>
-                            <Input
-                                className='counter'
-                                type='number'
-                                value={this
-                                .props
-                                .label
-                                .toString()}
-                                readonly
-                                modifier='underbar'/>
-                        </Col>
-                        <Col>
-                            <Input
-                                className='counter'
-                                type='number'
-                                value={this
-                                .props
-                                .count
-                                .toString()}
-                                onChange={(e) => this.props.onCountChange(e.target.value, this.props.index)}
-                                modifier='underbar'
-                                float/>
-                        </Col>
-                    </Row>
-                </Col>
-                <Col>
+                    <Input
+                        className='counter'
+                        type='number'
+                        value={this
+                        .props
+                        .label
+                        .toString()}
+                        readonly
+                        modifier='underbar'/>
+                </TableRowColumn>
+                <TableRowColumn
+                    style={{
+                    width: '25%',
+                    height: '30px',
+                    margin: 0,
+                    paddingRight: '6px',
+                    paddingLeft: '6px'
+                }}>
+                    <Input
+                        className='counter'
+                        type='number'
+                        value={this
+                        .props
+                        .count
+                        .toString()}
+                        onChange={(e) => this.props.onCountChange(e.target.value, this.props.index)}
+                        modifier='underbar'
+                        float/>
+                </TableRowColumn>
+                <TableRowColumn
+                    style={{
+                    width: '50%',
+                    height: '30px',
+                    margin: 0,
+                    paddingRight: '6px',
+                    paddingLeft: '6px'
+                }}>
                     <Input
                         type='number'
                         className='text-right counter'
@@ -64,9 +91,8 @@ class MoneyCounterItem extends React.Component {
                         .toString()}
                         readonly
                         modifier='underbar'/>
-
-                </Col>
-            </Row>
+                </TableRowColumn>
+            </TableRow>
         );
     }
 }

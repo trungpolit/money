@@ -39,5 +39,6 @@ export const INITIAL_STATE = {
             totalPrice: 0
         }
     ],
-    totalPrice: 0
+    totalPrice: 0,
+    totalRealPrice: 0
 };

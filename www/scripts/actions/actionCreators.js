@@ -4,7 +4,8 @@ import {
     CHANGE_WEIGHT,
     RESET_RECEIPT,
     CHANGE_COUNT,
-    RESET_COUNT
+    RESET_COUNT,
+    CHANGE_REAL
 } from '../constants/actionTypes';
 
 export function changeTaxPct(pct) {
@@ -29,4 +30,8 @@ export function changeCount(count, index) {
 
 export function resetCount() {
     return {type: RESET_COUNT};
+}
+
+export function changeReal(price) {
+    return {type: CHANGE_REAL, price: price};
 }

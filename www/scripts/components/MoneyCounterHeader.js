@@ -12,6 +12,17 @@ import {
     Button
 } from 'react-onsenui';
 
+import {
+    Table,
+    TableBody,
+    TableHeader,
+    TableHeaderColumn,
+    TableRow,
+    TableRowColumn
+} from 'material-ui/Table';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 class MoneyCounterHeader extends React.Component {
     constructor(props) {
         super(props);
@@ -20,26 +31,50 @@ class MoneyCounterHeader extends React.Component {
 
     render() {
         return (
-            <section
-                style={{
-                'marginTop': '16px',
-                'marginBottom': '16px'
-            }}>
-                <Row>
-                    <Col
-                        style={{
-                        'textAlign': 'center'
-                    }}>
-                        <strong>Nhập số tiền (tờ)</strong>
-                    </Col>
-                    <Col
-                        style={{
-                        'textAlign': 'center'
-                    }}>
-                       <strong>Thành tiền (đồng)</strong>
-                    </Col>
-                </Row>
-            </section>
+            <TableHeader
+                displayRowCheckbox={false}
+                displaySelectAll={false}
+                adjustForCheckbox={false}>
+                <TableRow>
+                    <TableRowColumn>Số tiền cần có</TableRowColumn>
+                    <TableRowColumn>
+                        <Input
+                            type='number'
+                            value={this
+                            .props
+                            .totalRealPrice
+                            .toString()}
+                            onChange={(e) => this.props.onRealChange(e.target.value)}
+                            modifier='underbar'
+                            float/>
+                    </TableRowColumn>
+                </TableRow>
+                <TableRow>
+                    <TableRowColumn>Số tiền tính ra</TableRowColumn>
+                    <TableRowColumn>
+                        <Input
+                            type='number'
+                            value={this
+                            .props
+                            .totalPrice
+                            .toString()}
+                            readonly
+                            modifier='underbar'
+                            float/>
+                    </TableRowColumn>
+                </TableRow>
+                <TableRow>
+                    <TableRowColumn>Chênh lệch</TableRowColumn>
+                    <TableRowColumn>
+                        <Input
+                            type='number'
+                            value={(this.props.totalRealPrice - this.props.totalPrice).toString()}
+                            readonly
+                            modifier='underbar'
+                            float/>
+                    </TableRowColumn>
+                </TableRow>
+            </TableHeader>
         );
     }
 }

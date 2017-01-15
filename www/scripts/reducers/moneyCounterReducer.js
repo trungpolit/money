@@ -29,6 +29,8 @@ const moneyCounterReducer = (state = initialState, action) => {
             return newState;
         case 'RESET_COUNT':
             return Object.assign({}, initialState);
+        case 'CHANGE_REAL':
+            return Object.assign({}, state, {totalRealPrice: action.price});
         default:
             return state;
     }

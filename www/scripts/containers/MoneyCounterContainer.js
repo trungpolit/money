@@ -1,8 +1,8 @@
 const mapStateToProps = (state) => {
-    return {totalPrice: state.moneyCounterReducer.totalPrice, rows: state.moneyCounterReducer.rows};
+    return {totalPrice: state.moneyCounterReducer.totalPrice, rows: state.moneyCounterReducer.rows, totalRealPrice: state.moneyCounterReducer.totalRealPrice};
 };
 
-import {changeCount, resetCount} from '../actions/actionCreators';
+import {changeCount, resetCount, changeReal} from '../actions/actionCreators';
 const mapDispatchToProps = (dispatch) => {
     return {
         onCountChange: (count, index) => {
@@ -10,6 +10,9 @@ const mapDispatchToProps = (dispatch) => {
         },
         onResetCountClick: () => {
             dispatch(resetCount());
+        },
+        onRealChange: (price) => {
+            dispatch(changeReal(price));
         }
     };
 };
