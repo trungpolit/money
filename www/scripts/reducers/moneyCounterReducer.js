@@ -1,4 +1,5 @@
 import {RATIO, INITIAL_STATE} from '../constants/counters';
+import {CHANGE_COUNT, RESET_COUNT, CHANGE_REAL, GET_LAST_COUNT} from '../constants/actionTypes';
 const initialState = INITIAL_STATE;
 const calculate = function (state) {
     let totalPrice = 0;
@@ -19,7 +20,7 @@ const moneyCounterReducer = (state = initialState, action) => {
     let label;
     let index;
     switch (action.type) {
-        case 'CHANGE_COUNT':
+        case CHANGE_COUNT:
             index = action.index;
             rowsTmp = JSON.parse(JSON.stringify(state.rows));
             rowsTmp[index].count = parseInt(action.count);
@@ -27,10 +28,12 @@ const moneyCounterReducer = (state = initialState, action) => {
             rowsTmp[index].totalPrice = parseInt(action.count) * parseInt(label) * parseInt(RATIO);
             newState = calculate(Object.assign({}, state, {rows: rowsTmp}));
             return newState;
-        case 'RESET_COUNT':
+        case RESET_COUNT:
             return Object.assign({}, initialState);
-        case 'CHANGE_REAL':
+        case CHANGE_REAL:
             return Object.assign({}, state, {totalRealPrice: action.price});
+        case GET_LAST_COUNT:
+            return Object.assign({}, action.lastState);
         default:
             return state;
     }

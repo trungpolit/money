@@ -165,7 +165,15 @@ class MoneyCounter extends React.Component {
                 <section style={{
                     'margin': '16px'
                 }}>
-                    <Button modifier='large' onClick={() => this.props.onResetCountClick()}>Làm lại</Button>
+                    <Row>
+                        <Col>
+                            <Button modifier='large' onClick={() => this.props.onResetCountClick()}>Làm lại</Button>
+                        </Col>
+                        <Col></Col>
+                        <Col>
+                            <Button modifier='large' onClick={() => this.props.onLastCountClick()}>Lịch sử</Button>
+                        </Col>
+                    </Row>
                 </section>
             </Page>
         );

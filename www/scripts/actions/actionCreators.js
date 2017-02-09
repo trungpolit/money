@@ -5,7 +5,8 @@ import {
     RESET_RECEIPT,
     CHANGE_COUNT,
     RESET_COUNT,
-    CHANGE_REAL
+    CHANGE_REAL,
+    GET_LAST_COUNT
 } from '../constants/actionTypes';
 
 export function changeTaxPct(pct) {
@@ -34,4 +35,8 @@ export function resetCount() {
 
 export function changeReal(price) {
     return {type: CHANGE_REAL, price: price};
+}
+
+export function getLastCount(lastState) {
+    return {type: GET_LAST_COUNT, lastState: lastState};
 }
