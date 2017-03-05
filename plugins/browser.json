@@ -9,6 +9,15 @@
     "installed_plugins": {
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "io.cordova.myappb847f9"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "io.cordova.myappb847f9"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "trungpolit.cordova.money"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "trungpolit.cordova.money"
         }
     },
     "dependent_plugins": {}

@@ -1,8 +1,15 @@
 const mapStateToProps = (state) => {
-    return {taxPct: state.moneyReceiptReducer.taxPct, rows: state.moneyReceiptReducer.rows, totalPriceNoVat: state.moneyReceiptReducer.totalPriceNoVat, totalTax: state.moneyReceiptReducer.totalTax, totalPrice: state.moneyReceiptReducer.totalPrice};
+    return {
+        taxPct: state.moneyReceiptReducer.taxPct,
+        vatType: state.moneyReceiptReducer.vatType,
+        rows: state.moneyReceiptReducer.rows,
+        totalPriceNoVat: state.moneyReceiptReducer.totalPriceNoVat,
+        totalTax: state.moneyReceiptReducer.totalTax,
+        totalPrice: state.moneyReceiptReducer.totalPrice,
+    };
 };
 
-import {changeWeight, changeCost, changeTaxPct, resetReceipt} from '../actions/actionCreators';
+import {changeWeight, changeCost, changeTaxPct, changeVatType, resetReceipt, addItem} from '../actions/actionCreators';
 const mapDispatchToProps = (dispatch) => {
     return {
         onWeightChange: (weight, index) => {
@@ -14,9 +21,15 @@ const mapDispatchToProps = (dispatch) => {
         onTaxPctChange: (pct) => {
             dispatch(changeTaxPct(pct));
         },
+        onVatTypeChange: (value) => {
+            dispatch(changeVatType(value));
+        },
         onResetReceiptClick: () => {
             dispatch(resetReceipt());
-        }
+        },
+        onAddItemClick: () => {
+            dispatch(addItem());
+        },
     };
 };
 

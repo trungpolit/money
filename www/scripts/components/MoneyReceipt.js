@@ -1,7 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import ons from 'onsenui';
 
 import {
     Page,
@@ -13,12 +10,27 @@ import {
     List,
     ListHeader,
     ListItem,
-    Button
+    Button,
+    Fab,
+    Icon,
+    ToolbarButton,
 } from 'react-onsenui';
 
-import MoneyReceiptHeader from './MoneyReceiptHeader';
+import {
+    Table,
+    TableBody,
+    TableHeader,
+    TableFooter,
+    TableRow,
+    TableRowColumn
+} from 'material-ui/Table';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 import MoneyReceiptItem from './MoneyReceiptItem';
-import MoneyReceiptFooter from './MoneyReceiptFooter';
+import TaxSelectField from './TaxSelectField';
+import VATSelectField from './VATSelectField';
+import MoneyNumberInput from './MoneyNumberInput';
 
 class MoneyReceipt extends React.Component {
     constructor(props) {
@@ -32,65 +44,123 @@ class MoneyReceipt extends React.Component {
                     <BackButton>Trở lại</BackButton>
                 </div>
                 <div className='center'>{props.label}</div>
+                <div className='right'>
+                    <ToolbarButton onClick={(e) => this.props.onAddItemClick()}>
+                        <Button modifier='large--cta'>
+                            <Icon icon='md-plus'/>
+                        </Button>
+                    </ToolbarButton>
+                </div>
             </Toolbar>
         );
     }
 
+    renderFixed() {
+        return (
+            <Fab position='bottom right'>
+                <Icon icon='md-face'/>
+            </Fab>
+        );
+    }
+
     render() {
-        const left = {
-            value: 10,
-            label: "Thuế suất 10%"
-        };
-        const right = {
-            value: 5,
-            label: "Thuế suất 5%"
-        };
+
         return (
             <Page
                 renderToolbar={this
-                .renderToolbar
-                .bind(this, this.props)}>
-                <MoneyReceiptHeader
-                    left={left}
-                    right={right}
-                    taxPct={this.props.taxPct}
-                    onTaxPctChange={this.props.onTaxPctChange}/>
-                <List>
-                    <ListItem>
-                        <Row>
-                            <Col>
-                                <strong>Nhập khối lượng</strong>
-                            </Col>
-                            <Col>
-                                <strong>Nhập giá gồm VAT</strong>
-                            </Col>
-                        </Row>
-                    </ListItem>
-                    {this
-                        .props
-                        .rows
-                        .map((row, i) => {
-                            return <MoneyReceiptItem
-                                onWeightChange={this.props.onWeightChange}
-                                onCostChange={this.props.onCostChange}
-                                key={i}
-                                index={i}
-                                weight={row.weight}
-                                cost={row.cost}
-                                totalPrice={row.totalPrice}
-                                costNoVat={row.costNoVat}
-                                totalPriceNoVat={row.totalPriceNoVat}/>;
-                        })}
-                </List>
-                <MoneyReceiptFooter
-                    totalPriceNoVat={this.props.totalPriceNoVat}
-                    totalTax={this.props.totalTax}
-                    totalPrice={this.props.totalPrice}/>
-                <section style={{
-                    'margin': '16px'
-                }}>
-                    <Button modifier='large' onClick={() => this.props.onResetReceiptClick()}>Làm lại</Button>
-                </section>
+                    .renderToolbar
+                    .bind(this, this.props)}
+            >
+                <MuiThemeProvider>
+                    <Table fixedHeader={true} fixedFooter={true} height='300px' showRowHover={true} stripedRows={true}>
+                        <TableHeader
+                            displayRowCheckbox={false}
+                            displaySelectAll={false}
+                            adjustForCheckbox={false}>
+                            <TableRow
+                                style={{
+                                    height: '30px'
+                                }}>
+                                <TableRowColumn
+                                    style={{
+                                        height: '30px',
+                                        margin: 0,
+                                        paddingRight: '12px',
+                                        paddingLeft: '6px'
+                                    }}>
+                                    <VATSelectField {...this.props}
+                                                    value={this.props.vatType}
+                                                    onChange={(event, index, value) => this.props.onVatTypeChange(value)}/>
+                                </TableRowColumn>
+                                <TableRowColumn
+                                    style={{
+                                        height: '30px',
+                                        margin: 0,
+                                        paddingRight: '12px',
+                                        paddingLeft: '6px'
+                                    }}>
+                                    <TaxSelectField {...this.props}
+                                                    value={this.props.taxPct}
+                                                    onChange={(event, index, value) => this.props.onTaxPctChange(value)}/>
+                                </TableRowColumn>
+                            </TableRow>
+                        </TableHeader>
+                        <TableBody displayRowCheckbox={false} showRowHover={true} stripedRows={true}
+                                   displayBorder={true}>
+                            {this
+                                .props
+                                .rows
+                                .map((row, i) => {
+                                    return <MoneyReceiptItem
+                                        onWeightChange={this.props.onWeightChange}
+                                        onCostChange={this.props.onCostChange}
+                                        weight={row.weight}
+                                        cost={row.cost}
+                                        totalPrice={row.totalPrice}
+                                        costNoVat={row.costNoVat}
+                                        totalPriceNoVat={row.totalPriceNoVat}
+                                        totalTax={row.totalTax}
+                                        key={i}
+                                        index={i}
+                                    />;
+                                })}
+                        </TableBody>
+                        <TableFooter adjustForCheckbox={false}>
+                            <TableRow>
+                                <TableRowColumn>Tiền hàng</TableRowColumn>
+                                <TableRowColumn>
+                                    <MoneyNumberInput
+                                        className='text-right counter'
+                                        value={this
+                                            .props
+                                            .totalPriceNoVat}
+                                        readonly
+                                    />
+                                </TableRowColumn>
+                            </TableRow>
+                            <TableRow>
+                                <TableRowColumn>Tiền thuế</TableRowColumn>
+                                <TableRowColumn>
+                                    <MoneyNumberInput
+                                        className='text-right counter'
+                                        value={this.props.totalTax}
+                                        readonly
+                                    />
+                                </TableRowColumn>
+                            </TableRow>
+                            <TableRow>
+                                <TableRowColumn>Tổng tiền hàng</TableRowColumn>
+                                <TableRowColumn>
+                                    <MoneyNumberInput
+                                        className='text-right counter'
+                                        value={this.props.totalPrice}
+                                        readonly
+                                    />
+                                </TableRowColumn>
+                            </TableRow>
+                        </TableFooter>
+                    </Table>
+                </MuiThemeProvider>
             </Page>
         );
     }

@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Machine>TELION-LAPPY</Machine>
+    <WindowsUser>mylov</WindowsUser>
+    <TargetPlatformIdentifier>WindowsPhoneApp</TargetPlatformIdentifier>
+    <TargetOsVersion>6.3</TargetOsVersion>
+    <TargetOsDescription>Windows Phone 8.1</TargetOsDescription>
+    <SolutionConfiguration>debug|arm</SolutionConfiguration>
+    <PackageArchitecture>arm</PackageArchitecture>
+    <PackageIdentityName>f7009840-a8e4-11e6-b08e-5b658a2d2b1c</PackageIdentityName>
+    <PackageIdentityPublisher>CN=%24username%24</PackageIdentityPublisher>
+    <IntermediateOutputPath>E:\cordova-project\money_new\money_new\money_new\platforms\windows\build\phone\bld\</IntermediateOutputPath>
+    <RemoteDeploymentType></RemoteDeploymentType>
+    <PackageRegistrationPath></PackageRegistrationPath>
+    <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppXManifest Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\build\phone\debug\arm\AppxManifest.xml">
+      <PackagePath>AppxManifest.xml</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppXManifest>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\SplashScreen.scale-100.png">
+      <PackagePath>images\SplashScreen.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\SplashScreenPhone.scale-240.png">
+      <PackagePath>images\SplashScreenPhone.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Square150x150Logo.scale-100.png">
+      <PackagePath>images\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Square150x150Logo.scale-240.png">
+      <PackagePath>images\Square150x150Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Square30x30Logo.scale-100.png">
+      <PackagePath>images\Square30x30Logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Square310x310Logo.scale-100.png">
+      <PackagePath>images\Square310x310Logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Square44x44Logo.scale-100.png">
+      <PackagePath>images\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Square44x44Logo.scale-240.png">
+      <PackagePath>images\Square44x44Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Square70x70Logo.scale-100.png">
+      <PackagePath>images\Square70x70Logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Square71x71Logo.scale-100.png">
+      <PackagePath>images\Square71x71Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Square71x71Logo.scale-240.png">
+      <PackagePath>images\Square71x71Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\StoreLogo.scale-100.png">
+      <PackagePath>images\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\StoreLogo.scale-240.png">
+      <PackagePath>images\StoreLogo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Wide310x150Logo.scale-100.png">
+      <PackagePath>images\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\images\Wide310x150Logo.scale-240.png">
+      <PackagePath>images\Wide310x150Logo.scale-240.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\images\cordova.png">
+      <PackagePath>www\images\cordova.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\cordova-js-src\exec.js">
+      <PackagePath>www\cordova-js-src\exec.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\cordova-js-src\platform.js">
+      <PackagePath>www\cordova-js-src\platform.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\cordova.js">
+      <PackagePath>www\cordova.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\cordova_plugins.js">
+      <PackagePath>www\cordova_plugins.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\actions\actionCreators.js">
+      <PackagePath>www\scripts\actions\actionCreators.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\bundle.js">
+      <PackagePath>www\scripts\bundle.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\components\MoneyCounter.js">
+      <PackagePath>www\scripts\components\MoneyCounter.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\components\MoneyCounterItem.js">
+      <PackagePath>www\scripts\components\MoneyCounterItem.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\components\MoneyListPage.js">
+      <PackagePath>www\scripts\components\MoneyListPage.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\components\MoneyNavigator.js">
+      <PackagePath>www\scripts\components\MoneyNavigator.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\components\MoneyNumberInput.js">
+      <PackagePath>www\scripts\components\MoneyNumberInput.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\components\MoneyReceipt.js">
+      <PackagePath>www\scripts\components\MoneyReceipt.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\components\MoneyReceiptItem.js">
+      <PackagePath>www\scripts\components\MoneyReceiptItem.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\components\TaxSelectField.js">
+      <PackagePath>www\scripts\components\TaxSelectField.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\components\VATSelectField.js">
+      <PackagePath>www\scripts\components\VATSelectField.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\constants\actionTypes.js">
+      <PackagePath>www\scripts\constants\actionTypes.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\constants\counters.js">
+      <PackagePath>www\scripts\constants\counters.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\constants\receipts.js">
+      <PackagePath>www\scripts\constants\receipts.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\containers\MoneyCounterContainer.js">
+      <PackagePath>www\scripts\containers\MoneyCounterContainer.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\containers\MoneyReceiptContainer.js">
+      <PackagePath>www\scripts\containers\MoneyReceiptContainer.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\fastclick.js">
+      <PackagePath>www\scripts\fastclick.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\index.js">
+      <PackagePath>www\scripts\index.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\middlewares\autoSave.js">
+      <PackagePath>www\scripts\middlewares\autoSave.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\platformOverrides.js">
+      <PackagePath>www\scripts\platformOverrides.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\reducers\indexReducer.js">
+      <PackagePath>www\scripts\reducers\indexReducer.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\reducers\moneyCounterReducer.js">
+      <PackagePath>www\scripts\reducers\moneyCounterReducer.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\reducers\moneyReceiptReducer.js">
+      <PackagePath>www\scripts\reducers\moneyReceiptReducer.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\winstore-jscompat.js">
+      <PackagePath>www\scripts\winstore-jscompat.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\WinJS\js\base.js">
+      <PackagePath>www\WinJS\js\base.js</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\bootstrap-table.css">
+      <PackagePath>www\css\bootstrap-table.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\font_awesome\css\font-awesome.css">
+      <PackagePath>www\css\font_awesome\css\font-awesome.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\font_awesome\css\font-awesome.min.css">
+      <PackagePath>www\css\font_awesome\css\font-awesome.min.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\index.css">
+      <PackagePath>www\css\index.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\ionicons\css\ionicons.css">
+      <PackagePath>www\css\ionicons\css\ionicons.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\ionicons\css\ionicons.min.css">
+      <PackagePath>www\css\ionicons\css\ionicons.min.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\material-design-iconic-font\css\material-design-iconic-font.css">
+      <PackagePath>www\css\material-design-iconic-font\css\material-design-iconic-font.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\material-design-iconic-font\css\material-design-iconic-font.min.css">
+      <PackagePath>www\css\material-design-iconic-font\css\material-design-iconic-font.min.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\onsen-css-components-blue-basic-theme.css">
+      <PackagePath>www\css\onsen-css-components-blue-basic-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\onsen-css-components-blue-theme.css">
+      <PackagePath>www\css\onsen-css-components-blue-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\onsen-css-components-dark-theme.css">
+      <PackagePath>www\css\onsen-css-components-dark-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\onsen-css-components-default.css">
+      <PackagePath>www\css\onsen-css-components-default.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\onsen-css-components-purple-theme.css">
+      <PackagePath>www\css\onsen-css-components-purple-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\onsen-css-components-sunshine-theme.css">
+      <PackagePath>www\css\onsen-css-components-sunshine-theme.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\onsen-css-components.css">
+      <PackagePath>www\css\onsen-css-components.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\onsenui.css">
+      <PackagePath>www\css\onsenui.css</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\font_awesome\fonts\fontawesome-webfont.eot">
+      <PackagePath>www\css\font_awesome\fonts\fontawesome-webfont.eot</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\ionicons\fonts\ionicons.eot">
+      <PackagePath>www\css\ionicons\fonts\ionicons.eot</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot">
+      <PackagePath>www\css\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\font_awesome\fonts\fontawesome-webfont.svg">
+      <PackagePath>www\css\font_awesome\fonts\fontawesome-webfont.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\ionicons\fonts\ionicons.svg">
+      <PackagePath>www\css\ionicons\fonts\ionicons.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg">
+      <PackagePath>www\css\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\font_awesome\fonts\fontawesome-webfont.ttf">
+      <PackagePath>www\css\font_awesome\fonts\fontawesome-webfont.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\ionicons\fonts\ionicons.ttf">
+      <PackagePath>www\css\ionicons\fonts\ionicons.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf">
+      <PackagePath>www\css\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\font_awesome\fonts\fontawesome-webfont.woff">
+      <PackagePath>www\css\font_awesome\fonts\fontawesome-webfont.woff</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\ionicons\fonts\ionicons.woff">
+      <PackagePath>www\css\ionicons\fonts\ionicons.woff</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff">
+      <PackagePath>www\css\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\font_awesome\fonts\fontawesome-webfont.woff2">
+      <PackagePath>www\css\font_awesome\fonts\fontawesome-webfont.woff2</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2">
+      <PackagePath>www\css\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\css\font_awesome\fonts\FontAwesome.otf">
+      <PackagePath>www\css\font_awesome\fonts\FontAwesome.otf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\index.html">
+      <PackagePath>www\index.html</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\www\scripts\bundle.js.map">
+      <PackagePath>www\scripts\bundle.js.map</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\config.xml">
+      <PackagePath>config.xml</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\cordova-project\money_new\money_new\money_new\platforms\windows\build\phone\debug\arm\resources.pri">
+      <PackagePath>resources.pri</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+    </AppxPackagedFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Phone.WinJS.2.1\1.0\">
+      <Name>Microsoft.Phone.WinJS.2.1</Name>
+      <Version>1.0.9651.0</Version>
+      <Architecture>Neutral</Architecture>
+      <FrameworkIdentity>Name=Microsoft.Phone.WinJS.2.1, MinVersion=1.0.9651.0</FrameworkIdentity>
+      <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\WindowsPhoneApp\v8.1\ExtensionSDKs\Microsoft.Phone.WinJS.2.1\1.0\Microsoft.Phone.WinJS.2.1.appx</AppxLocation>
+      <MoreInfo>http://go.microsoft.com/fwlink/%3fLinkId=260891</MoreInfo>
+    </ResolvedSDKReference>
+  </ItemGroup>
+</Project>

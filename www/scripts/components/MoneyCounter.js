@@ -1,7 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import ons from 'onsenui';
 
 import {
     Page,
@@ -16,9 +13,8 @@ import {
     Button
 } from 'react-onsenui';
 
-import MoneyCounterHeader from './MoneyCounterHeader';
+import MoneyNumberInput from './MoneyNumberInput';
 import MoneyCounterItem from './MoneyCounterItem';
-import MoneyCounterFooter from './MoneyCounterFooter';
 
 import {INITIAL_STATE} from '../constants/counters';
 
@@ -32,6 +28,9 @@ import {
 } from 'material-ui/Table';
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
+import TaxSelectField from './TaxSelectField';
+import VATSelectField from './VATSelectField';
 
 class MoneyCounter extends React.Component {
     constructor(props) {
@@ -53,8 +52,8 @@ class MoneyCounter extends React.Component {
         return (
             <Page
                 renderToolbar={this
-                .renderToolbar
-                .bind(this, this.props)}>
+                    .renderToolbar
+                    .bind(this, this.props)}>
                 <MuiThemeProvider>
                     <Table fixedHeader={true} height='300px'>
                         <TableHeader
@@ -63,86 +62,80 @@ class MoneyCounter extends React.Component {
                             adjustForCheckbox={false}>
                             <TableRow
                                 style={{
-                                height: '30px'
-                            }}>
-                                <TableRowColumn
-                                    style={{
-                                    height: '30px',
-                                    margin: 0,
-                                    paddingRight: '12px',
-                                    paddingLeft: '6px'
-                                }}>Số tiền cần có</TableRowColumn>
-                                <TableRowColumn
-                                    style={{
-                                    height: '30px',
-                                    margin: 0,
-                                    paddingRight: '12px',
-                                    paddingLeft: '6px'
+                                    height: '30px'
                                 }}>
-                                    <Input
-                                        type='number'
+                                <TableRowColumn
+                                    style={{
+                                        height: '30px',
+                                        margin: 0,
+                                        paddingRight: '12px',
+                                        paddingLeft: '6px'
+                                    }}>Số tiền cần có</TableRowColumn>
+                                <TableRowColumn
+                                    style={{
+                                        height: '30px',
+                                        margin: 0,
+                                        paddingRight: '12px',
+                                        paddingLeft: '6px'
+                                    }}>
+                                    <MoneyNumberInput
                                         value={this
-                                        .props
-                                        .totalRealPrice
-                                        .toString()}
-                                        onChange={(e) => this.props.onRealChange(e.target.value)}
-                                        modifier='underbar'
-                                        float/>
+                                            .props
+                                            .totalRealPrice}
+                                        onChange={(e) => {
+                                            this.props.onRealChange(e.target.value);
+                                        }}
+                                    />
                                 </TableRowColumn>
                             </TableRow>
                             <TableRow
                                 style={{
-                                height: '30px'
-                            }}>
-                                <TableRowColumn
-                                    style={{
-                                    height: '30px',
-                                    margin: 0,
-                                    paddingRight: '12px',
-                                    paddingLeft: '6px'
-                                }}>Số tiền tính ra</TableRowColumn>
-                                <TableRowColumn
-                                    style={{
-                                    height: '30px',
-                                    margin: 0,
-                                    paddingRight: '12px',
-                                    paddingLeft: '6px'
+                                    height: '30px'
                                 }}>
-                                    <Input
-                                        type='number'
+                                <TableRowColumn
+                                    style={{
+                                        height: '30px',
+                                        margin: 0,
+                                        paddingRight: '12px',
+                                        paddingLeft: '6px'
+                                    }}>Số tiền tính ra</TableRowColumn>
+                                <TableRowColumn
+                                    style={{
+                                        height: '30px',
+                                        margin: 0,
+                                        paddingRight: '12px',
+                                        paddingLeft: '6px'
+                                    }}>
+                                    <MoneyNumberInput
                                         value={this
-                                        .props
-                                        .totalPrice
-                                        .toString()}
+                                            .props
+                                            .totalPrice}
                                         readonly
-                                        modifier='underbar'
-                                        float/>
+                                    />
                                 </TableRowColumn>
                             </TableRow>
                             <TableRow
                                 style={{
-                                height: '30px'
-                            }}>
-                                <TableRowColumn
-                                    style={{
-                                    height: '30px',
-                                    margin: 0,
-                                    paddingRight: '12px',
-                                    paddingLeft: '6px'
-                                }}>Số tiền chênh lệch</TableRowColumn>
-                                <TableRowColumn
-                                    style={{
-                                    height: '30px',
-                                    margin: 0,
-                                    paddingRight: '12px',
-                                    paddingLeft: '6px'
+                                    height: '30px'
                                 }}>
-                                    <Input
-                                        type='number'
-                                        value={(this.props.totalRealPrice - this.props.totalPrice).toString()}
+                                <TableRowColumn
+                                    style={{
+                                        height: '30px',
+                                        margin: 0,
+                                        paddingRight: '12px',
+                                        paddingLeft: '6px'
+                                    }}>Số tiền chênh lệch</TableRowColumn>
+                                <TableRowColumn
+                                    style={{
+                                        height: '30px',
+                                        margin: 0,
+                                        paddingRight: '12px',
+                                        paddingLeft: '6px'
+                                    }}>
+                                    <MoneyNumberInput
+                                        value={(this.props.totalRealPrice - this.props.totalPrice)}
                                         readonly
-                                        modifier='underbar'
-                                        float/>
+                                    />
                                 </TableRowColumn>
                             </TableRow>
                         </TableHeader>
@@ -171,7 +164,7 @@ class MoneyCounter extends React.Component {
                         </Col>
                         <Col></Col>
                         <Col>
-                            <Button modifier='large' onClick={() => this.props.onLastCountClick()}>Lịch sử</Button>
+                            <Button modifier='large' onClick={() => this.props.onAutoSaveClick()}>Lịch sử</Button>
                         </Col>
                     </Row>
                 </section>

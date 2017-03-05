@@ -2,7 +2,7 @@ const mapStateToProps = (state) => {
     return {totalPrice: state.moneyCounterReducer.totalPrice, rows: state.moneyCounterReducer.rows, totalRealPrice: state.moneyCounterReducer.totalRealPrice};
 };
 
-import {changeCount, resetCount, changeReal, getLastCount} from '../actions/actionCreators';
+import {changeCount, resetCount, changeReal, getLastAutoSave} from '../actions/actionCreators';
 const mapDispatchToProps = (dispatch) => {
     return {
         onCountChange: (count, index) => {
@@ -16,7 +16,10 @@ const mapDispatchToProps = (dispatch) => {
         },
         onLastCountClick: () => {
             dispatch(getLastCount());
-        }
+        },
+        onAutoSaveClick: () => {
+            dispatch(getLastAutoSave());
+        },
     };
 };
 

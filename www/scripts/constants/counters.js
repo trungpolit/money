@@ -1,4 +1,5 @@
 export const RATIO = 1000;
+export const COUNTER_AUTOSAVE = 'counter_autosave';
 export const INITIAL_STATE = {
     rows: [
         {
@@ -41,5 +42,13 @@ export const INITIAL_STATE = {
     ],
     totalPrice: 0,
     totalRealPrice: 0,
-    
+    // Cách cờ trạng thái liên quan tới autoSave
+    isAutoSaving: 0,
+    lastAutoSaved: null,
+    autoSaveStatus: 1,
+    autoSaveErrors: null,
+    isGettingAutoSave:0,
+    lastGetAutoSaved: null,
+    getAutoSaveStatus:1,
+    getAutoSaveErrors:null,
 };

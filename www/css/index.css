@@ -27,3 +27,20 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
 input.counter {
     min-height: 35px;
 }
+
+.text-input--underbar:read-only {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(1px, transparent), color-stop(1px, #ff0a0a));
+    background-image: -webkit-linear-gradient(bottom, transparent 1px, #ff0a0a 1px);
+    background-image: -moz-linear-gradient(bottom, transparent 1px, #ff0a0a 1px);
+    background-image: -o-linear-gradient(bottom, transparent 1px, #ff0a0a 1px);
+    background-image: linear-gradient(to top, transparent 1px, #ff0a0a 1px);
+}
+
+.text-input--underbar:-moz-read-only {
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(1px, transparent), color-stop(1px, #ff0a0a));
+    background-image: -webkit-linear-gradient(bottom, transparent 1px, #ff0a0a 1px);
+    background-image: -moz-linear-gradient(bottom, transparent 1px, #ff0a0a 1px);
+    background-image: -o-linear-gradient(bottom, transparent 1px, #ff0a0a 1px);
+    background-image: linear-gradient(to top, transparent 1px, #ff0a0a 1px);
+}
+

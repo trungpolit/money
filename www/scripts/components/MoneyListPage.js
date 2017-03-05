@@ -1,12 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import ons from 'onsenui';
-
 import {Page, Toolbar, List, ListHeader, ListItem} from 'react-onsenui';
 
 import MoneyReceiptContainer from '../containers/MoneyReceiptContainer';
 import MoneyCounterContainer from '../containers/MoneyCounterContainer';
+import MoneyAppMore from '../components/MoneyAppMore';
 
 class MoneyListPage extends React.Component {
     constructor(props) {
@@ -52,26 +49,34 @@ class MoneyListPage extends React.Component {
             <Page renderToolbar={this.renderToolbar}>
                 <List
                     dataSource={[
-                    {
-                        comp: MoneyReceiptContainer,
-                        label: "Tính hóa đơn",
-                        props: {
-                            key: "MoneyReceiptContainer",
-                            label: "Tính Hóa Đơn"
+                        {
+                            comp: MoneyReceiptContainer,
+                            label: "Tính hóa đơn",
+                            props: {
+                                key: "MoneyReceiptContainer",
+                                label: "Tính Hóa Đơn"
+                            }
+                        }, {
+                            comp: MoneyCounterContainer,
+                            label: "Tính tiền hàng",
+                            props: {
+                                key: "MoneyCounterContainer",
+                                label: "Tính Tiền Hàng"
+                            }
+                        }, {
+                            comp: MoneyAppMore,
+                            label: "Ứng dụng khác",
+                            props: {
+                                key: "MoneyAppMore",
+                                label: "Ứng dụng khác"
+                            }
                         }
-                    }, {
-                        comp: MoneyCounterContainer,
-                        label: "Tính tiền hàng",
-                        props: {
-                            key: "MoneyCounterContainer",
-                            label: "Tính Tiền Hàng"
-                        }
-                    }
-                ]}
+                    ]}
                     renderRow={this.renderRow}/>
             </Page>
         );
     }
-};
+}
+;
 
 module.exports = MoneyListPage;
