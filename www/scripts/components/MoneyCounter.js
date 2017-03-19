@@ -49,6 +49,14 @@ class MoneyCounter extends React.Component {
     }
 
     render() {
+        let offsetPrice = this.props.totalRealPrice - this.props.totalPrice;
+        let offsetLabel = "Còn thừa/thiếu";
+        if (offsetPrice > 0) {
+            offsetLabel = "Còn thừa";
+        } else if (offsetPrice < 0) {
+            offsetLabel = "Còn thiếu";
+        }
+        let offsetAbs = offsetPrice ? Math.abs(offsetPrice) : '';
         return (
             <Page
                 renderToolbar={this
@@ -70,7 +78,7 @@ class MoneyCounter extends React.Component {
                                         margin: 0,
                                         paddingRight: '12px',
                                         paddingLeft: '6px'
-                                    }}>Số tiền cần có</TableRowColumn>
+                                    }}><span className="sum-label">Nhập tổng số tiền</span></TableRowColumn>
                                 <TableRowColumn
                                     style={{
                                         height: '30px',
@@ -98,7 +106,7 @@ class MoneyCounter extends React.Component {
                                         margin: 0,
                                         paddingRight: '12px',
                                         paddingLeft: '6px'
-                                    }}>Số tiền tính ra</TableRowColumn>
+                                    }}><span className="sum-label">Tổng số tiền tính ra</span></TableRowColumn>
                                 <TableRowColumn
                                     style={{
                                         height: '30px',
@@ -124,7 +132,7 @@ class MoneyCounter extends React.Component {
                                         margin: 0,
                                         paddingRight: '12px',
                                         paddingLeft: '6px'
-                                    }}>Số tiền chênh lệch</TableRowColumn>
+                                    }}><span className="sum-label">{offsetLabel}</span></TableRowColumn>
                                 <TableRowColumn
                                     style={{
                                         height: '30px',
@@ -133,7 +141,7 @@ class MoneyCounter extends React.Component {
                                         paddingLeft: '6px'
                                     }}>
                                     <MoneyNumberInput
-                                        value={(this.props.totalRealPrice - this.props.totalPrice)}
+                                        value={offsetAbs}
                                         readonly
                                     />
                                 </TableRowColumn>

@@ -44,3 +44,17 @@ input.counter {
     background-image: linear-gradient(to top, transparent 1px, #ff0a0a 1px);
 }
 
+.item-label {
+    font-size: 15px;
+}
+
+.sum-label {
+    font-size: 16px;
+    color: #1284ff;
+}
+
+.value-label .text-input {
+    text-align: left;
+    color: #1284ff;
+}
+

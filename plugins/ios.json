@@ -10,9 +10,6 @@
         "cordova-plugin-whitelist": {
             "PACKAGE_NAME": "trungpolit.cordova.money"
         },
-        "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "trungpolit.cordova.money"
-        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "trungpolit.cordova.money"
         },

@@ -107,7 +107,8 @@ const moneyReceiptReducer = (state = initialState, action) => {
             return newState;
         case CHANGE_WEIGHT:
             rowsTmp = JSON.parse(JSON.stringify(state.rows));
-            rowsTmp[action.index]['weight'] = numeral(action.weight).value();
+            // rowsTmp[action.index]['weight'] = numeral(action.weight).value();
+            rowsTmp[action.index]['weight'] = action.weight;
             newState = calculate(Object.assign({}, state, {rows: rowsTmp}));
             return newState;
         case CHANGE_COST:

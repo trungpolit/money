@@ -30,6 +30,8 @@
     "webpack-dev-server": "^1.16.2"
   },
   "scripts": {
-    "devtools": "react-devtools"
+    "devtools": "react-devtools",
+	"test": "webpack -w --config webpack.config.dev.js",
+	"build": "webpack -w --config webpack.config.js"
   }
 }

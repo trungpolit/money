@@ -46,8 +46,8 @@ class MoneyReceipt extends React.Component {
                 <div className='center'>{props.label}</div>
                 <div className='right'>
                     <ToolbarButton onClick={(e) => this.props.onAddItemClick()}>
-                        <Button modifier='large--cta'>
-                            <Icon icon='md-plus'/>
+                        <Button modifier='large' style={{backgroundColor: "#1284ff"}}>
+                            <Icon icon='md-plus' size={26} style={{marginTop: "8px"}}/>
                         </Button>
                     </ToolbarButton>
                 </div>
@@ -127,34 +127,42 @@ class MoneyReceipt extends React.Component {
                         </TableBody>
                         <TableFooter adjustForCheckbox={false}>
                             <TableRow>
-                                <TableRowColumn>Tiền hàng</TableRowColumn>
-                                <TableRowColumn>
+                                <TableRowColumn style={{paddingLeft: "6px", paddingRight: "6px"}}>
+                                    <span className="sum-label">Tiền hàng</span>
+                                </TableRowColumn>
+                                <TableRowColumn style={{paddingLeft: "6px", paddingRight: "6px"}}>
                                     <MoneyNumberInput
                                         className='text-right counter'
-                                        value={this
-                                            .props
-                                            .totalPriceNoVat}
+                                        value={this.props.totalPriceNoVat ? this.props.totalPriceNoVat : 0}
                                         readonly
+                                        zeroAllow={true}
                                     />
                                 </TableRowColumn>
                             </TableRow>
                             <TableRow>
-                                <TableRowColumn>Tiền thuế</TableRowColumn>
-                                <TableRowColumn>
+                                <TableRowColumn style={{paddingLeft: "6px", paddingRight: "6px"}}>
+                                    <span
+                                        className="sum-label">Tiền thuế {this.props.taxPct ? this.props.taxPct : 0}%</span>
+                                </TableRowColumn>
+                                <TableRowColumn style={{paddingLeft: "6px", paddingRight: "6px"}}>
                                     <MoneyNumberInput
                                         className='text-right counter'
-                                        value={this.props.totalTax}
+                                        value={this.props.totalTax ? this.props.totalTax : 0}
                                         readonly
+                                        zeroAllow={true}
                                     />
                                 </TableRowColumn>
                             </TableRow>
                             <TableRow>
-                                <TableRowColumn>Tổng tiền hàng</TableRowColumn>
-                                <TableRowColumn>
+                                <TableRowColumn style={{paddingLeft: "6px", paddingRight: "6px"}}>
+                                    <span className="sum-label">Tổng tiền hàng</span>
+                                </TableRowColumn>
+                                <TableRowColumn style={{paddingLeft: "6px", paddingRight: "6px"}}>
                                     <MoneyNumberInput
                                         className='text-right counter'
-                                        value={this.props.totalPrice}
+                                        value={this.props.totalPrice ? this.props.totalPrice : 0}
                                         readonly
+                                        zeroAllow={true}
                                     />
                                 </TableRowColumn>
                             </TableRow>

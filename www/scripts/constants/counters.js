@@ -4,44 +4,44 @@ export const INITIAL_STATE = {
     rows: [
         {
             label: 500,
-            count: 0,
-            totalPrice: 0
+            count: '',
+            totalPrice: '',
         }, {
             label: 200,
-            count: 0,
-            totalPrice: 0
+            count: '',
+            totalPrice: '',
         }, {
             label: 100,
-            count: 0,
-            totalPrice: 0
+            count: '',
+            totalPrice: '',
         }, {
             label: 50,
-            count: 0,
-            totalPrice: 0
+            count: '',
+            totalPrice: '',
         }, {
             label: 20,
-            count: 0,
-            totalPrice: 0
+            count: '',
+            totalPrice: '',
         }, {
             label: 10,
-            count: 0,
-            totalPrice: 0
+            count: '',
+            totalPrice: '',
         }, {
             label: 5,
-            count: 0,
-            totalPrice: 0
+            count: '',
+            totalPrice: '',
         }, {
             label: 2,
-            count: 0,
-            totalPrice: 0
+            count: '',
+            totalPrice: '',
         }, {
             label: 1,
-            count: 0,
-            totalPrice: 0
+            count: '',
+            totalPrice: '',
         }
     ],
-    totalPrice: 0,
-    totalRealPrice: 0,
+    totalPrice: '',
+    totalRealPrice: '',
     // Cách cờ trạng thái liên quan tới autoSave
     isAutoSaving: 0,
     lastAutoSaved: null,

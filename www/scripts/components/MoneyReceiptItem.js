@@ -25,6 +25,11 @@ class MoneyReceiptItem extends React.Component {
     }
 
     render() {
+        let style = this.props.rowNumber % 2 === 0 ? {
+                paddingLeft: "6px",
+                paddingRight: "6px",
+                backgroundColor: "#FFFFE0"
+            } : {paddingLeft: "6px", paddingRight: "6px"};
         return (
             <TableRow
                 style={{
@@ -36,33 +41,32 @@ class MoneyReceiptItem extends React.Component {
                 hoverable={true}
                 displayBorder={true}
             >
-                <TableRowColumn>
+                <TableRowColumn style={style}>
                     <Row style={{
                         marginTop: '5px',
                     }}>
                         <Col>
-                            Số lượng
+                            <span className="item-label">Nhập số lượng</span>
                         </Col>
                         <Col>
-                            Đơn giá
+                            <span className="item-label">Nhập đơn giá</span>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
                             <MoneyNumberInput
-                                placehoder="Số lượng"
                                 className='text-right counter'
                                 value={this
                                     .props
                                     .weight}
                                 id={'weight' + this.props.rowNumber}
                                 float
+                                floatType={true}
                                 onChange={(e) => this.props.onWeightChange(e.target.value, this.props.rowNumber)}
                             />
                         </Col>
                         <Col>
                             <MoneyNumberInput
-                                placehoder="Đơn giá"
                                 className='text-right counter'
                                 value={this
                                     .props
@@ -77,20 +81,19 @@ class MoneyReceiptItem extends React.Component {
                         marginTop: '5px',
                     }}>
                         <Col>
-                            KQ giá chưa VAT
+                            <span className="item-label">Đơn giá chưa VAT</span>
                         </Col>
                         <Col>
-                            Thành tiền
+                            <span className="item-label">Thành tiền chưa VAT</span>
                         </Col>
                     </Row>
                     <Row>
                         <Col>
                             <MoneyNumberInput
-                                placehoder="KQ giá chưa VAT"
                                 className='text-right counter'
                                 value={this
                                     .props
-                                    .totalPriceNoVat}
+                                    .costNoVat}
                                 id={'costNoVat' + this.props.rowNumber}
                                 float
                                 readonly
@@ -98,11 +101,10 @@ class MoneyReceiptItem extends React.Component {
                         </Col>
                         <Col>
                             <MoneyNumberInput
-                                placehoder="Thành tiền"
                                 className='text-right counter'
                                 value={this
                                     .props
-                                    .totalPrice}
+                                    .totalPriceNoVat}
                                 id={'totalPrice' + this.props.rowNumber}
                                 float
                                 readonly

@@ -6,6 +6,7 @@ import {
 } from 'material-ui/Table';
 
 import MoneyNumberInput from './MoneyNumberInput';
+import {Input} from 'react-onsenui';
 
 class MoneyCounterItem extends React.Component {
     constructor(props) {
@@ -28,13 +29,11 @@ class MoneyCounterItem extends React.Component {
                         paddingRight: '6px',
                         paddingLeft: '6px'
                     }}>
-                    <MoneyNumberInput
-                        className='counter'
-                        value={this
-                            .props
-                            .label}
+                    <Input
+                        value={'Loại '+this.props.label}
                         input-id={'label' + this.props.key}
                         readonly
+                        className="value-label"
                     />
                 </TableRowColumn>
                 <TableRowColumn
