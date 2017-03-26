@@ -1,14 +1,14 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <widget android-versionCode="1" defaultlocale="en-US" id="trungpolit.cordova.money" version="1.0.0" windows-packageVersion="1.0.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:vs="http://schemas.microsoft.com/appx/2014/htmlapps">
-  <name>Hóa Đơn</name>
-  <description>Tính đơn hàng, đếm tiền theo mệnh giá</description>
+  <name>HÃ³a ÄÆ¡n</name>
+  <description>TÃ­nh Ä‘Æ¡n hÃ ng, Ä‘áº¿m tiá»n theo má»‡nh giÃ¡</description>
   <author email="dev@cordova.apache.org" href="http://cordova.io">ngotrung.poli.t@gmail.com</author>
   <content src="index.html" />
   <access origin="*" />
   <vs:features />
   <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
   <preference name="SplashScreen" value="screen" />
-  <preference name="windows-target-version" value="8.1" />
+  <preference name="windows-target-version" value="10.0" />
   <plugin name="cordova-plugin-whitelist" version="1" />
   <allow-intent href="http://*/*" />
   <allow-intent href="https://*/*" />
@@ -96,10 +96,14 @@
     <splash height="1280" src="res/screens/wp8/SplashScreenImage.png" width="768" />
   </platform>
   <engine name="browser" spec="~4.1.0" />
-  <preference name="WindowsStoreDisplayName" value="Hóa Đơn" />
+  <preference name="WindowsStoreDisplayName" value="HÃ³a ÄÆ¡n" />
   <vs:platformSpecificValues>
     <vs:platformSpecificWidget id="trungpolit.cordova.money" platformName="windows" version="1.0.0.0" />
   </vs:platformSpecificValues>
   <plugin name="cordova-plugin-device" version="1.1.4" />
   <plugin name="ionic-plugin-keyboard" spec="~2.2.1" />
+  <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
+  <engine name="android" spec="5.2.1" />
+  <engine name="ios" spec="4.2.0" />
+  <engine name="windows" spec="4.4.2" />
 </widget>

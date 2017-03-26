@@ -32,6 +32,8 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TaxSelectField from './TaxSelectField';
 import VATSelectField from './VATSelectField';
 
+import {MAX_TOTAL_REAL_PRICE} from '../constants/counters';
+
 class MoneyCounter extends React.Component {
     constructor(props) {
         super(props);
@@ -50,11 +52,11 @@ class MoneyCounter extends React.Component {
 
     render() {
         let offsetPrice = this.props.totalRealPrice - this.props.totalPrice;
-        let offsetLabel = "Còn thừa/thiếu";
+        let offsetLabel = "Thừa/thiếu";
         if (offsetPrice > 0) {
-            offsetLabel = "Còn thừa";
+            offsetLabel = "Thiếu";
         } else if (offsetPrice < 0) {
-            offsetLabel = "Còn thiếu";
+            offsetLabel = "Thừa";
         }
         let offsetAbs = offsetPrice ? Math.abs(offsetPrice) : '';
         return (
@@ -78,7 +80,7 @@ class MoneyCounter extends React.Component {
                                         margin: 0,
                                         paddingRight: '12px',
                                         paddingLeft: '6px'
-                                    }}><span className="sum-label">Nhập tổng số tiền</span></TableRowColumn>
+                                    }}><span className="sum-label">Nhập tiền cần tính</span></TableRowColumn>
                                 <TableRowColumn
                                     style={{
                                         height: '30px',
@@ -93,6 +95,8 @@ class MoneyCounter extends React.Component {
                                         onChange={(e) => {
                                             this.props.onRealChange(e.target.value);
                                         }}
+                                        className='sum-label'
+                                        max={MAX_TOTAL_REAL_PRICE}
                                     />
                                 </TableRowColumn>
                             </TableRow>
@@ -106,7 +110,7 @@ class MoneyCounter extends React.Component {
                                         margin: 0,
                                         paddingRight: '12px',
                                         paddingLeft: '6px'
-                                    }}><span className="sum-label">Tổng số tiền tính ra</span></TableRowColumn>
+                                    }}><span className="sum-label">Số tiền tính ra</span></TableRowColumn>
                                 <TableRowColumn
                                     style={{
                                         height: '30px',
@@ -119,6 +123,7 @@ class MoneyCounter extends React.Component {
                                             .props
                                             .totalPrice}
                                         readonly
+                                        className='sum-label'
                                     />
                                 </TableRowColumn>
                             </TableRow>
@@ -143,6 +148,7 @@ class MoneyCounter extends React.Component {
                                     <MoneyNumberInput
                                         value={offsetAbs}
                                         readonly
+                                        className='sum-label'
                                     />
                                 </TableRowColumn>
                             </TableRow>

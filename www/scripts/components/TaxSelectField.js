@@ -23,7 +23,7 @@ class TaxSelectField extends React.Component {
                     });
                     this.props.onChange(event, index, value);
                 }}
-                labelStyle={{color:'#1284ff'}}
+                labelStyle={{color:'red',fontWeight:'bold'}}
             >
                 {TAX_PCT
                     .map((row, i) => {

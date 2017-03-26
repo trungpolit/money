@@ -44,7 +44,7 @@ const moneyCounterReducer = (state = initialState, action) => {
         case RESET_COUNT:
             return Object.assign({}, initialState);
         case CHANGE_REAL:
-            return Object.assign({}, state, {totalRealPrice: numeral(action.price).value()});
+            return Object.assign({}, state, {totalRealPrice: action.price});
         // Thực hiện xử lý cho autosave
         case START_AUTOSAVE:
             return Object.assign({}, state, {isAutoSaving: 1});

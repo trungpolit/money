@@ -6,7 +6,9 @@ import {
 } from 'material-ui/Table';
 
 import MoneyNumberInput from './MoneyNumberInput';
-import {Input} from 'react-onsenui';
+import { Input } from 'react-onsenui';
+
+import {MAX_COUNT} from '../constants/counters';
 
 class MoneyCounterItem extends React.Component {
     constructor(props) {
@@ -34,6 +36,7 @@ class MoneyCounterItem extends React.Component {
                         input-id={'label' + this.props.key}
                         readonly
                         className="value-label"
+                        modifier='underbar'
                     />
                 </TableRowColumn>
                 <TableRowColumn
@@ -51,6 +54,7 @@ class MoneyCounterItem extends React.Component {
                             .count}
                         input-id={'counter' + this.props.key}
                         onChange={(e) => this.props.onCountChange(e.target.value, this.props.index)}
+                        max={MAX_COUNT}
                     />
                 </TableRowColumn>
                 <TableRowColumn

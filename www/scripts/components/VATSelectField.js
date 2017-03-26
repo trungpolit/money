@@ -24,7 +24,7 @@ class VATSelectField extends React.Component {
                     });
                     this.props.onChange(event, index, value);
                 }}
-                labelStyle={{color:'#1284ff'}}
+                labelStyle={{ color: 'red', fontWeight: 'bold'}}
             >
                 {VAT_TYPE
                     .map((row, i) => {

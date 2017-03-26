@@ -5,26 +5,26 @@ const initialState = {
     vatType: VAT_TYPE[0]['value'],
     rows: [
         {
-            weight: 0,
-            cost: 0,
-            totalPrice: 0,
-            costNoVat: 0,
-            totalPriceNoVat: 0,
-            totalTax: 0
+            weight: '',
+            cost: '',
+            totalPrice: '',
+            costNoVat: '',
+            totalPriceNoVat: '',
+            totalTax: ''
         }, {
-            weight: 0,
-            cost: 0,
-            totalPrice: 0,
-            costNoVat: 0,
-            totalPriceNoVat: 0,
-            totalTax: 0
+            weight: '',
+            cost: '',
+            totalPrice: '',
+            costNoVat: '',
+            totalPriceNoVat: '',
+            totalTax: ''
         }, {
-            weight: 0,
-            cost: 0,
-            totalPrice: 0,
-            costNoVat: 0,
-            totalPriceNoVat: 0,
-            totalTax: 0
+            weight: '',
+            cost: '',
+            totalPrice: '',
+            costNoVat: '',
+            totalPriceNoVat: '',
+            totalTax: ''
         }
     ],
     totalPriceNoVat: 0,
@@ -64,7 +64,7 @@ const calculate = function (state) {
             cost = numeral(element.cost).value();
             let realCost = parseFloat((cost + cost * taxPct).toFixed(2));
             weight = numeral(element.weight).value();
-            element.totalTax = parseFloat((realCost * weight * taxPct).toFixed(2));
+            element.totalTax = parseFloat((cost * weight * taxPct).toFixed(2));
             totalTax += element.totalTax;
 
             element.totalPrice = realCost * weight;
@@ -121,12 +121,12 @@ const moneyReceiptReducer = (state = initialState, action) => {
         case ADD_ITEM:
             rowsTmp = JSON.parse(JSON.stringify(state.rows));
             rowsTmp.push({
-                weight: 0,
-                cost: 0,
-                totalPrice: 0,
-                costNoVat: 0,
-                totalPriceNoVat: 0,
-                totalTax: 0,
+                weight: '',
+                cost: '',
+                totalPrice: '',
+                costNoVat: '',
+                totalPriceNoVat: '',
+                totalTax: '',
             });
             newState = calculate(Object.assign({}, state, {rows: rowsTmp}));
             return newState;

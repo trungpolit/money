@@ -52,3 +52,6 @@ export const INITIAL_STATE = {
     getAutoSaveStatus:1,
     getAutoSaveErrors:null,
 };
+
+export const MAX_TOTAL_REAL_PRICE = 888000000000;
+export const MAX_COUNT = 1000000;

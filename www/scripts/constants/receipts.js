@@ -1,10 +1,10 @@
 export const VAT_TYPE = [
     {
-        label: "Có VAT",
+        label: "Đã có VAT",
         value: "VAT",
     },
     {
-        label: "Không VAT",
+        label: "Chưa có VAT",
         value: "NOVAT",
     }
 ];
@@ -25,4 +25,5 @@ export const TAX_PCT = [
     },
 ];
 
-export const MAX_ITEM = 3;
+export const MAX_WEIGHT = 10000000;
+export const MAX_COST = 100000000000;

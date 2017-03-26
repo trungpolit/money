@@ -17,9 +17,13 @@ import {
 } from '../constants/actionTypes';
 
 import {
-    COUNTER_AUTOSAVE
+    COUNTER_AUTOSAVE, MAX_TOTAL_REAL_PRICE, MAX_COUNT
 } from '../constants/counters';
+
+import { MAX_WEIGHT, MAX_COST } from '../constants/receipts';
+
 const localForage = require("localforage");
+const numeral = require('numeral');
 
 // ******************** Xử lý dành cho Receipt ********************
 export function changeTaxPct(pct) {
@@ -31,10 +35,23 @@ export function changeVatType(value) {
 }
 
 export function changeCost(cost, index) {
-    return {type: CHANGE_COST, cost: cost, index: index};
+    let prettyCost = Math.abs(numeral(cost).value());
+    if (prettyCost > MAX_COST) {
+        prettyCost = MAX_COST;
+    }
+    return { type: CHANGE_COST, cost: prettyCost, index: index};
 }
 
 export function changeWeight(weight, index) {
+    if (typeof weight === 'string' && weight.match(/\.$/)) {
+
+    } else {
+        weight = Math.abs(numeral(weight).value());
+    }
+    let prettyWeight = Math.abs(numeral(weight).value());
+    if (prettyWeight > MAX_WEIGHT) {
+        weight = MAX_WEIGHT;
+    }
     return {type: CHANGE_WEIGHT, weight: weight, index: index};
 }
 
@@ -48,7 +65,11 @@ export function resetReceipt() {
 
 // ******************** Xử lý dành cho Counter ********************
 export function changeCount(count, index) {
-    return {type: CHANGE_COUNT, count: count, index: index};
+    let prettyCount = Math.abs(numeral(count).value());
+    if (prettyCount > MAX_COUNT) {
+        prettyCount = MAX_COUNT;
+    }
+    return { type: CHANGE_COUNT, count: prettyCount, index: index};
 }
 
 export function resetCount() {
@@ -56,7 +77,11 @@ export function resetCount() {
 }
 
 export function changeReal(price) {
-    return {type: CHANGE_REAL, price: price};
+    let prettyPrice = Math.abs(numeral(price).value());
+    if (prettyPrice > MAX_TOTAL_REAL_PRICE) {
+        prettyPrice = MAX_TOTAL_REAL_PRICE;
+    }
+    return { type: CHANGE_REAL, price: prettyPrice};
 }
 
 export function startAutoSave() {

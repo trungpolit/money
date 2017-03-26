@@ -46,8 +46,8 @@ class MoneyReceipt extends React.Component {
                 <div className='center'>{props.label}</div>
                 <div className='right'>
                     <ToolbarButton onClick={(e) => this.props.onAddItemClick()}>
-                        <Button modifier='large' style={{backgroundColor: "#1284ff"}}>
-                            <Icon icon='md-plus' size={26} style={{marginTop: "8px"}}/>
+                        <Button modifier='large' style={{backgroundColor: "#ffffff"}}>
+                            <Icon icon='md-plus' size={26} style={{ marginTop: "8px", color:"#009688"}}/>
                         </Button>
                     </ToolbarButton>
                 </div>
@@ -106,7 +106,7 @@ class MoneyReceipt extends React.Component {
                             </TableRow>
                         </TableHeader>
                         <TableBody displayRowCheckbox={false} showRowHover={true} stripedRows={true}
-                                   displayBorder={true}>
+                            displayBorder={true} className="ScrollContainer">
                             {this
                                 .props
                                 .rows
@@ -132,7 +132,7 @@ class MoneyReceipt extends React.Component {
                                 </TableRowColumn>
                                 <TableRowColumn style={{paddingLeft: "6px", paddingRight: "6px"}}>
                                     <MoneyNumberInput
-                                        className='text-right counter'
+                                        className='text-right counter sum-label'
                                         value={this.props.totalPriceNoVat ? this.props.totalPriceNoVat : 0}
                                         readonly
                                         zeroAllow={true}
@@ -146,7 +146,7 @@ class MoneyReceipt extends React.Component {
                                 </TableRowColumn>
                                 <TableRowColumn style={{paddingLeft: "6px", paddingRight: "6px"}}>
                                     <MoneyNumberInput
-                                        className='text-right counter'
+                                        className='text-right counter sum-label'
                                         value={this.props.totalTax ? this.props.totalTax : 0}
                                         readonly
                                         zeroAllow={true}
@@ -159,7 +159,7 @@ class MoneyReceipt extends React.Component {
                                 </TableRowColumn>
                                 <TableRowColumn style={{paddingLeft: "6px", paddingRight: "6px"}}>
                                     <MoneyNumberInput
-                                        className='text-right counter'
+                                        className='text-right counter sum-label'
                                         value={this.props.totalPrice ? this.props.totalPrice : 0}
                                         readonly
                                         zeroAllow={true}
