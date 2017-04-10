@@ -8,7 +8,7 @@
     <WindowsMobileEmulatorID>DA831653-315E-41D9-BF63-CCCE346F4E9C;Mobile Emulator 10.0.14393.0 WVGA 4 inch 512MB</WindowsMobileEmulatorID>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Android'">
-    <DebuggerFlavor>AndroidEmulator</DebuggerFlavor>
+    <DebuggerFlavor>SimulateNexus4</DebuggerFlavor>
     <AndroidEmulatorID>AndroidDevice;Device</AndroidEmulatorID>
   </PropertyGroup>
 </Project>

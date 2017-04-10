@@ -14,7 +14,7 @@ const beautifier = function (value, props) {
         }
     }
     if (props.floatType) {
-        if (value.match(/\.$/) && dotCount === 1) {
+        if ((value.match(/\.$/) || value.match(/\.0$/)) && dotCount === 1) {
 
         } else {
             value = value ? numeral(value).format('0,0[.]0[0]') : '';

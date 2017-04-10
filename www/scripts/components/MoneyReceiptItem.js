@@ -70,8 +70,8 @@ class MoneyReceiptItem extends React.Component {
         let style = this.props.rowNumber % 2 === 0 ? {
             paddingLeft: "6px",
             paddingRight: "6px",
-            backgroundColor: "rgba(0, 0, 0, 0.298039)"
-        } : { paddingLeft: "6px", paddingRight: "6px", backgroundColor: "rgb(245, 245, 245)" };
+            backgroundColor: "#e9e9e9"
+        } : { paddingLeft: "6px", paddingRight: "6px", backgroundColor: "#c0c0c0" };
         return (
             <TableRow
                 style={{

@@ -31,14 +31,16 @@ const moneyCounterReducer = (state = initialState, action) => {
     let label;
     let index;
     let count;
+    let prettyCount = 0;
     switch (action.type) {
         case CHANGE_COUNT:
             index = action.index;
             rowsTmp = JSON.parse(JSON.stringify(state.rows));
-            count = numeral(action.count).value();
+            count = action.count ? numeral(action.count).value() : '';
+            prettyCount = numeral(action.count).value();
             rowsTmp[index].count = count;
             label = initialState.rows[index].label;
-            rowsTmp[index].totalPrice = count * parseInt(label) * parseInt(RATIO);
+            rowsTmp[index].totalPrice = prettyCount * parseInt(label) * parseInt(RATIO);
             newState = calculate(Object.assign({}, state, {rows: rowsTmp}));
             return Object.assign({}, state, newState);
         case RESET_COUNT:

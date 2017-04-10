@@ -43,7 +43,7 @@ export function changeCost(cost, index) {
 }
 
 export function changeWeight(weight, index) {
-    if (typeof weight === 'string' && weight.match(/\.$/)) {
+    if (typeof weight === 'string' && (weight.match(/\.$/) || weight.match(/\.0$/) )) {
 
     } else {
         weight = Math.abs(numeral(weight).value());
@@ -52,7 +52,7 @@ export function changeWeight(weight, index) {
     if (prettyWeight > MAX_WEIGHT) {
         weight = MAX_WEIGHT;
     }
-    return {type: CHANGE_WEIGHT, weight: weight, index: index};
+    return { type: CHANGE_WEIGHT, weight: weight ? weight:'', index: index };
 }
 
 export function addItem() {

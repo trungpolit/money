@@ -113,7 +113,7 @@ const moneyReceiptReducer = (state = initialState, action) => {
             return newState;
         case CHANGE_COST:
             rowsTmp = JSON.parse(JSON.stringify(state.rows));
-            rowsTmp[action.index]['cost'] = numeral(action.cost).value();
+            rowsTmp[action.index]['cost'] = action.cost ? numeral(action.cost).value():'';
             newState = calculate(Object.assign({}, state, {rows: rowsTmp}));
             return newState;
         case RESET_RECEIPT:
