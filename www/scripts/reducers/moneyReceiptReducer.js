@@ -44,15 +44,19 @@ const calculate = function (state) {
             let element = state.rows[index];
             cost = numeral(element.cost).value();
             weight = numeral(element.weight).value();
-            element.totalTax = parseFloat((cost * weight * taxPct).toFixed(2));
-            totalTax += element.totalTax;
 
+            // Đơn giá sau thuế & tổng giá sau thuế
             element.totalPrice = cost * weight;
             totalPrice += element.totalPrice;
 
-            element.costNoVat = parseFloat((cost - cost * taxPct).toFixed(2));
+            // Đơn giá trước thuế & tổng giá trước thuế
+            element.costNoVat = parseFloat((cost /(taxPct+1)).toFixed(2));
             element.totalPriceNoVat = element.costNoVat * weight;
             totalPriceNoVat += element.totalPriceNoVat;
+
+            // Tiền thuế & tổng tiền thuế
+            element.totalTax = parseFloat(((cost - element.costNoVat) * weight).toFixed(2));
+            totalTax += element.totalTax;
 
             state.rows[index] = element;
         }
